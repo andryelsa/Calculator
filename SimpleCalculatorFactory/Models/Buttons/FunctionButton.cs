@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SimpleCalculatorFactory.Models.Buttons
+﻿namespace SimpleCalculatorFactory.Models.Buttons
 {
-    class FunctionButton
+    // Класс функциональных кнопок (C, CE, %, ±)
+    public class FunctionButton : CalculatorButton
     {
+        // Конструктор функциональной кнопки
+        public FunctionButton(string function) : base(function)
+        {
+        }
+
+        // Возвращает функциональную команду
+        public override string Press()
+        {
+            return Content;
+        }
     }
 }

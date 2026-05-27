@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SimpleCalculatorFactory.Models.Buttons
+﻿namespace SimpleCalculatorFactory.Models.Buttons
 {
-    class CalculatorButton
+    // Базовый абстрактный класс для всех кнопок калькулятора
+    public abstract class CalculatorButton
     {
+        // Текст, отображаемый на кнопке
+        public string Content { get; }
+
+        // Конструктор кнопки
+        protected CalculatorButton(string content)
+        {
+            Content = content;
+        }
+
+        // Метод нажатия кнопки
+        public abstract string Press();
     }
 }

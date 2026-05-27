@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SimpleCalculatorFactory.Models.Buttons
+﻿namespace SimpleCalculatorFactory.Models.Buttons
 {
-    class OperatorButton
+    // Класс операционных кнопок (+, -, *, /)
+    public class OperatorButton : CalculatorButton
     {
+        // Конструктор операционной кнопки
+        public OperatorButton(string operation) : base(operation)
+        {
+        }
+
+        // Возвращает знак операции
+        public override string Press()
+        {
+            return Content;
+        }
     }
 }

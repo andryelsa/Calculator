@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SimpleCalculatorFactory.Models.Buttons;
 
 namespace SimpleCalculatorFactory.Factories
 {
-    class IButtonFactory
+    // Интерфейс фабрики кнопок
+    public interface IButtonFactory
     {
+        // Метод создания кнопки по её содержимому
+        CalculatorButton CreateButton(string content);
     }
 }

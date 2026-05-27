@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SimpleCalculatorFactory.Models.Buttons
+﻿namespace SimpleCalculatorFactory.Models.Buttons
 {
-    class DigitButton
+    // Класс цифровой кнопки
+    public class DigitButton : CalculatorButton
     {
+        // Конструктор цифровой кнопки
+        public DigitButton(string digit) : base(digit)
+        {
+        }
+
+        // Возвращает значение цифры
+        public override string Press()
+        {
+            return Content;
+        }
     }
 }
