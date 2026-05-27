@@ -1,2 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SimpleCalculatorFactory.MainWindow">
+    <Position X="8.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEACAACAACAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SimpleCalculatorFactory.Models.Buttons.OperatorButton">
+    <Position X="7" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Models\Buttons\OperatorButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleCalculatorFactory.Services.CalculatorEngine">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAEAIAAAAAAAAAAAAAAAAABAADAAACAAAAAACADBAgA=</HashCode>
+      <FileName>Services\CalculatorEngine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleCalculatorFactory.Factories.ButtonFactory">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factories\ButtonFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SimpleCalculatorFactory.Models.Buttons.CalculatorButton">
+    <Position X="2.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Models\Buttons\CalculatorButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleCalculatorFactory.Models.Buttons.DigitButton">
+    <Position X="2.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Models\Buttons\DigitButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleCalculatorFactory.Models.Buttons.FunctionButton">
+    <Position X="4.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Models\Buttons\FunctionButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SimpleCalculatorFactory.Factories.IButtonFactory">
+    <Position X="4.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factories\IButtonFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
