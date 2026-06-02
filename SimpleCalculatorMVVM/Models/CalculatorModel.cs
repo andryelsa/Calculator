@@ -1,4 +1,5 @@
 ﻿using System;
+using SimpleCalculatorMVVM.BehavioralPatterns;
 
 namespace SimpleCalculatorMVVM.Models
 {
@@ -48,35 +49,38 @@ namespace SimpleCalculatorMVVM.Models
             IsNewNumber = true;
         }
 
-        // Выполнение вычисления
+        // Выполнение вычисления с использованием паттерна Command
         public string Calculate(string currentText)
         {
             double secondNumber = Convert.ToDouble(currentText);
-            double result = 0;
+
+            // Выбор нужной команды в зависимости от операции
+            ICalculatorCommand calculatorCommand;
 
             switch (operation)
             {
                 case "+":
-                    result = firstNumber + secondNumber;
+                    calculatorCommand = new AddCommand();
                     break;
 
                 case "-":
-                    result = firstNumber - secondNumber;
+                    calculatorCommand = new SubtractCommand();
                     break;
 
                 case "×":
-                    result = firstNumber * secondNumber;
+                    calculatorCommand = new MultiplyCommand();
                     break;
 
                 case "÷":
-                    if (secondNumber == 0)
-                    {
-                        throw new DivideByZeroException();
-                    }
-
-                    result = firstNumber / secondNumber;
+                    calculatorCommand = new DivideCommand();
                     break;
+
+                default:
+                    return currentText;
             }
+
+            // Выполнение команды
+            double result = calculatorCommand.Execute(firstNumber, secondNumber);
 
             IsNewNumber = true;
             return result.ToString();
@@ -157,6 +161,49 @@ namespace SimpleCalculatorMVVM.Models
             IsNewNumber = true;
 
             return (number * number).ToString();
+        }
+
+        // Синус угла в градусах
+        public string Sin(string currentText)
+        {
+            double number = Convert.ToDouble(currentText);
+            IsNewNumber = true;
+            return Math.Round(
+                Math.Sin(number * Math.PI / 180), 6).ToString();
+        }
+
+        // Косинус угла в градусах
+        public string Cos(string currentText)
+        {
+            double number = Convert.ToDouble(currentText);
+            IsNewNumber = true;
+            return Math.Round(
+                Math.Cos(number * Math.PI / 180), 6).ToString();
+        }
+
+        // Тангенс угла в градусах
+        public string Tan(string currentText)
+        {
+            double number = Convert.ToDouble(currentText);
+            IsNewNumber = true;
+            return Math.Round(
+                Math.Tan(number * Math.PI / 180), 6).ToString();
+        }
+
+        // Котангенс угла в градусах
+        public string Cot(string currentText)
+        {
+            double number = Convert.ToDouble(currentText);
+            double tan = Math.Tan(number * Math.PI / 180);
+
+            if (tan == 0)
+            {
+                throw new DivideByZeroException();
+            }
+
+            IsNewNumber = true;
+            return Math.Round(
+                1 / tan, 6).ToString();
         }
 
         // Очистка памяти

@@ -143,6 +143,21 @@ namespace SimpleCalculatorMVVM.ViewModels
                 case "M+":
                     calculatorModel.MemoryAdd(Display);
                     break;
+                case "sin":
+                    Display = calculatorModel.Sin(Display);
+                    break;
+
+                case "cos":
+                    Display = calculatorModel.Cos(Display);
+                    break;
+
+                case "tan":
+                    Display = calculatorModel.Tan(Display);
+                    break;
+
+                case "cot":
+                    Display = calculatorModel.Cot(Display);
+                    break;
             }
         }
 
