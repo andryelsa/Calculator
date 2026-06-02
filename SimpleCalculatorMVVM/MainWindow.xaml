@@ -117,6 +117,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
@@ -126,59 +127,86 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <!-- Row 0 -->
+            <!-- Row 0: тригонометрические функции -->
+            <Button Content="sin"
+        Grid.Row="0"
+        Grid.Column="0"
+        Style="{StaticResource SpecialButtonStyle}"
+        Command="{Binding ButtonCommand}"
+        CommandParameter="sin"/>
+
+            <Button Content="cos"
+        Grid.Row="0"
+        Grid.Column="1"
+        Style="{StaticResource SpecialButtonStyle}"
+        Command="{Binding ButtonCommand}"
+        CommandParameter="cos"/>
+
+            <Button Content="tan"
+        Grid.Row="0"
+        Grid.Column="2"
+        Style="{StaticResource SpecialButtonStyle}"
+        Command="{Binding ButtonCommand}"
+        CommandParameter="tan"/>
+
+            <Button Content="cot"
+        Grid.Row="0"
+        Grid.Column="3"
+        Style="{StaticResource SpecialButtonStyle}"
+        Command="{Binding ButtonCommand}"
+        CommandParameter="cot"/>
             <Button Content="MC"
-                    Grid.Row="0"
+                    Grid.Row="1"
                     Grid.Column="0"
                     Style="{StaticResource MemoryButtonStyle}"
                     Command="{Binding ButtonCommand}"
                     CommandParameter="MC"/>
 
             <Button Content="MR"
-                    Grid.Row="0"
+                    Grid.Row="1"
                     Grid.Column="1"
                     Style="{StaticResource MemoryButtonStyle}"
                     Command="{Binding ButtonCommand}"
                     CommandParameter="MR"/>
 
             <Button Content="M+"
-                    Grid.Row="0"
+                    Grid.Row="1"
                     Grid.Column="2"
                     Style="{StaticResource MemoryButtonStyle}"
                     Command="{Binding ButtonCommand}"
                     CommandParameter="M+"/>
 
             <Button Content="%"
-                    Grid.Row="0"
+                    Grid.Row="1"
                     Grid.Column="3"
                     Style="{StaticResource OperatorButtonStyle}"
                     Command="{Binding ButtonCommand}"
                     CommandParameter="%"/>
 
-            <!-- Row 1 -->
+            <!-- Row 2 -->
             <Button Content="CE"
-                    Grid.Row="1"
+                    Grid.Row="2"
                     Grid.Column="0"
                     Style="{StaticResource ClearButtonStyle}"
                     Command="{Binding ButtonCommand}"
                     CommandParameter="CE"/>
 
             <Button Content="C"
-                    Grid.Row="1"
+                    Grid.Row="2"
                     Grid.Column="1"
                     Style="{StaticResource ClearButtonStyle}"
                     Command="{Binding ButtonCommand}"
                     CommandParameter="C"/>
 
             <Button Content="←"
-                    Grid.Row="1"
+                    Grid.Row="2"
                     Grid.Column="2"
                     Style="{StaticResource ClearButtonStyle}"
                     Command="{Binding ButtonCommand}"
                     CommandParameter="←"/>
 
             <Button Content="÷"
-                    Grid.Row="1"
+                    Grid.Row="2"
                     Grid.Column="3"
                     Style="{StaticResource OperatorButtonStyle}"
                     Command="{Binding ButtonCommand}"
@@ -186,115 +214,115 @@
 
             <!-- Row 2 -->
             <Button Content="7"
-                    Grid.Row="2"
+                    Grid.Row="3"
                     Grid.Column="0"
                     Style="{StaticResource DigitButtonStyle}"
                     Command="{Binding ButtonCommand}"
                     CommandParameter="7"/>
 
             <Button Content="8"
-                    Grid.Row="2"
+                    Grid.Row="3"
                     Grid.Column="1"
                     Style="{StaticResource DigitButtonStyle}"
                     Command="{Binding ButtonCommand}"
                     CommandParameter="8"/>
 
             <Button Content="9"
-                    Grid.Row="2"
+                    Grid.Row="3"
                     Grid.Column="2"
                     Style="{StaticResource DigitButtonStyle}"
                     Command="{Binding ButtonCommand}"
                     CommandParameter="9"/>
 
             <Button Content="×"
-                    Grid.Row="2"
+                    Grid.Row="3"
                     Grid.Column="3"
                     Style="{StaticResource OperatorButtonStyle}"
                     Command="{Binding ButtonCommand}"
                     CommandParameter="×"/>
 
-            <!-- Row 3 -->
+            <!-- Row 4 -->
             <Button Content="4"
-                    Grid.Row="3"
+                    Grid.Row="4"
                     Grid.Column="0"
                     Style="{StaticResource DigitButtonStyle}"
                     Command="{Binding ButtonCommand}"
                     CommandParameter="4"/>
 
             <Button Content="5"
-                    Grid.Row="3"
+                    Grid.Row="4"
                     Grid.Column="1"
                     Style="{StaticResource DigitButtonStyle}"
                     Command="{Binding ButtonCommand}"
                     CommandParameter="5"/>
 
             <Button Content="6"
-                    Grid.Row="3"
+                    Grid.Row="4"
                     Grid.Column="2"
                     Style="{StaticResource DigitButtonStyle}"
                     Command="{Binding ButtonCommand}"
                     CommandParameter="6"/>
 
             <Button Content="-"
-                    Grid.Row="3"
+                    Grid.Row="4"
                     Grid.Column="3"
                     Style="{StaticResource OperatorButtonStyle}"
                     Command="{Binding ButtonCommand}"
                     CommandParameter="-"/>
 
-            <!-- Row 4 -->
+            <!-- Row 5 -->
             <Button Content="1"
-                    Grid.Row="4"
+                    Grid.Row="5"
                     Grid.Column="0"
                     Style="{StaticResource DigitButtonStyle}"
                     Command="{Binding ButtonCommand}"
                     CommandParameter="1"/>
 
             <Button Content="2"
-                    Grid.Row="4"
+                    Grid.Row="5"
                     Grid.Column="1"
                     Style="{StaticResource DigitButtonStyle}"
                     Command="{Binding ButtonCommand}"
                     CommandParameter="2"/>
 
             <Button Content="3"
-                    Grid.Row="4"
+                    Grid.Row="5"
                     Grid.Column="2"
                     Style="{StaticResource DigitButtonStyle}"
                     Command="{Binding ButtonCommand}"
                     CommandParameter="3"/>
 
             <Button Content="+"
-                    Grid.Row="4"
+                    Grid.Row="5"
                     Grid.Column="3"
                     Style="{StaticResource OperatorButtonStyle}"
                     Command="{Binding ButtonCommand}"
                     CommandParameter="+"/>
 
-            <!-- Row 5 -->
+            <!-- Row 6 -->
             <Button Content="√"
-                    Grid.Row="5"
+                    Grid.Row="6"
                     Grid.Column="0"
                     Style="{StaticResource SpecialButtonStyle}"
                     Command="{Binding ButtonCommand}"
                     CommandParameter="√"/>
 
             <Button Content="0"
-                    Grid.Row="5"
+                    Grid.Row="6"
                     Grid.Column="1"
                     Style="{StaticResource DigitButtonStyle}"
                     Command="{Binding ButtonCommand}"
                     CommandParameter="0"/>
 
             <Button Content="x²"
-                    Grid.Row="5"
+                    Grid.Row="6"
                     Grid.Column="2"
                     Style="{StaticResource SpecialButtonStyle}"
                     Command="{Binding ButtonCommand}"
                     CommandParameter="x²"/>
 
             <Button Content="="
-                    Grid.Row="5"
+                    Grid.Row="6"
                     Grid.Column="3"
                     Style="{StaticResource EqualsButtonStyle}"
                     Command="{Binding ButtonCommand}"
