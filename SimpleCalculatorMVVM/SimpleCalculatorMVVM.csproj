@@ -15,4 +15,14 @@
     <Page Remove="Services\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Resources\calculator.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\calculator.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
 </Project>

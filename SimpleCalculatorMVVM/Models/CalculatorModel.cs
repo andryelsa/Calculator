@@ -1,5 +1,5 @@
 ﻿using System;
-using SimpleCalculatorMVVM.BehavioralPatterns;
+using SimpleCalculatorMVVM.StructuralPatterns;
 
 namespace SimpleCalculatorMVVM.Models
 {
@@ -9,7 +9,7 @@ namespace SimpleCalculatorMVVM.Models
         private double firstNumber;
         private string operation = "";
         private double memoryValue;
-
+        private readonly IOperationAdapter operationAdapter = new CommandOperationAdapter();
         public bool IsNewNumber { get; private set; } = true;
 
         // Добавление цифры к текущему значению
@@ -49,38 +49,12 @@ namespace SimpleCalculatorMVVM.Models
             IsNewNumber = true;
         }
 
-        // Выполнение вычисления с использованием паттерна Command
+        // Выполнение вычисления через структурный паттерн Adapter
         public string Calculate(string currentText)
         {
             double secondNumber = Convert.ToDouble(currentText);
 
-            // Выбор нужной команды в зависимости от операции
-            ICalculatorCommand calculatorCommand;
-
-            switch (operation)
-            {
-                case "+":
-                    calculatorCommand = new AddCommand();
-                    break;
-
-                case "-":
-                    calculatorCommand = new SubtractCommand();
-                    break;
-
-                case "×":
-                    calculatorCommand = new MultiplyCommand();
-                    break;
-
-                case "÷":
-                    calculatorCommand = new DivideCommand();
-                    break;
-
-                default:
-                    return currentText;
-            }
-
-            // Выполнение команды
-            double result = calculatorCommand.Execute(firstNumber, secondNumber);
+            double result = operationAdapter.Calculate(operation, firstNumber, secondNumber);
 
             IsNewNumber = true;
             return result.ToString();
