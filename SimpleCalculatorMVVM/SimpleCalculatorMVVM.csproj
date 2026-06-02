@@ -17,10 +17,26 @@
 
   <ItemGroup>
     <None Remove="Resources\calculator.ico" />
+    <None Remove="Resources\Fonts\Montserrat-VariableFont_wght.ttf" />
+    <None Remove="Resources\Icons\calculator.ico" />
+    <None Remove="Resources\Images\calculator.png" />
+    <None Remove="Resources\Sounds\click.wav" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\calculator.ico">
+    <Content Include="Resources\Images\calculator.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Sounds\click.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Fonts\Montserrat-VariableFont_wght.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\calculator.ico">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
