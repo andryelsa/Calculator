@@ -1,12 +1,10 @@
-﻿using System;
+﻿using CalculatorLibrary;
+using SimpleCalculatorMVVM.BehavioralPatterns;
 
-namespace SimpleCalculatorMVVM.BehavioralPatterns
+public class SinCommand : ICalculatorCommand
 {
-    public class SinCommand : ICalculatorCommand
+    public double Execute(double firstNumber, double secondNumber)
     {
-        public double Execute(double firstNumber, double secondNumber)
-        {
-            return Math.Sin(firstNumber * Math.PI / 180);
-        }
+        return CalculatorEngine.Sin(firstNumber);
     }
 }

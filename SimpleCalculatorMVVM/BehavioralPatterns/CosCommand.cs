@@ -1,12 +1,10 @@
-﻿using System;
+﻿using CalculatorLibrary;
+using SimpleCalculatorMVVM.BehavioralPatterns;
 
-namespace SimpleCalculatorMVVM.BehavioralPatterns
+public class CosCommand : ICalculatorCommand
 {
-    public class CosCommand : ICalculatorCommand
+    public double Execute(double firstNumber, double secondNumber)
     {
-        public double Execute(double firstNumber, double secondNumber)
-        {
-            return Math.Cos(firstNumber * Math.PI / 180);
-        }
+        return CalculatorEngine.Cos(firstNumber);
     }
 }

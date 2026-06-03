@@ -1,12 +1,10 @@
-﻿using System;
+﻿using CalculatorLibrary;
+using SimpleCalculatorMVVM.BehavioralPatterns;
 
-namespace SimpleCalculatorMVVM.BehavioralPatterns
+public class TanCommand : ICalculatorCommand
 {
-    public class TanCommand : ICalculatorCommand
+    public double Execute(double firstNumber, double secondNumber)
     {
-        public double Execute(double firstNumber, double secondNumber)
-        {
-            return Math.Tan(firstNumber * Math.PI / 180);
-        }
+        return CalculatorEngine.Tan(firstNumber);
     }
 }
