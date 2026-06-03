@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
-using SimpleCalculatorMVVM.Commands;
 using SimpleCalculatorMVVM.Models;
 
 namespace SimpleCalculatorMVVM.ViewModels

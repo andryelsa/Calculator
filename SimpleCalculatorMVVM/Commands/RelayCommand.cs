@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace SimpleCalculatorMVVM.Commands
+namespace SimpleCalculatorMVVM
 {
-    // Универсальная команда для MVVM
     public class RelayCommand : ICommand
     {
         private readonly Action<object> execute;

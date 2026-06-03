@@ -96,7 +96,6 @@ namespace SimpleCalculatorMVVM
 
         private void CreateMenu()
         {
-            MessageBox.Show("CreateMenu работает");
 
             Menu menu = new Menu();
 
@@ -147,6 +146,25 @@ namespace SimpleCalculatorMVVM
             darkTheme.Click += (s, e) =>
             {
                 appConfig.AccessibilityTheme = "Dark";
+                SaveConfig();
+                ApplyConfig();
+            };
+
+            MenuItem defaultTheme = new MenuItem
+            {
+                Header = "Исходный вид"
+            };
+
+            defaultTheme.Click += (s, e) =>
+            {
+                appConfig.WindowWidth = 420;
+                appConfig.WindowHeight = 700;
+                appConfig.BackgroundColor = "#F2F4F8";
+                appConfig.FontSize = 20;
+                appConfig.AccessibilityTheme = "Light";
+                appConfig.GenderTheme = "Male";
+                appConfig.AgeTheme = "Youth";
+
                 SaveConfig();
                 ApplyConfig();
             };
@@ -211,6 +229,8 @@ namespace SimpleCalculatorMVVM
                 ApplyConfig();
             };
 
+            settingsMenu.Items.Add(defaultTheme);
+            settingsMenu.Items.Add(new Separator());
             settingsMenu.Items.Add(lightTheme);
             settingsMenu.Items.Add(darkTheme);
             settingsMenu.Items.Add(new Separator());
