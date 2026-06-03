@@ -3,6 +3,8 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 using SimpleCalculatorMVVM.ViewModels;
+using System;
+using System.IO;
 
 namespace SimpleCalculatorMVVM
 {
@@ -19,7 +21,10 @@ namespace SimpleCalculatorMVVM
 
         private void CreateInterface()
         {
-            MainGrid.Margin = new Thickness(15);
+            MainGrid.RowDefinitions.Add(new RowDefinition
+            {
+                Height = new GridLength(30)
+            });
 
             MainGrid.RowDefinitions.Add(new RowDefinition
             {
@@ -31,8 +36,52 @@ namespace SimpleCalculatorMVVM
                 Height = new GridLength(1, GridUnitType.Star)
             });
 
+            CreateMenu();
             CreateDisplay();
             CreateButtons();
+        }
+
+        private void CreateMenu()
+        {
+            Menu menu = new Menu();
+
+            MenuItem fileMenu = new MenuItem
+            {
+                Header = "Файл"
+            };
+
+            MenuItem exitItem = new MenuItem
+            {
+                Header = "Выход"
+            };
+
+            exitItem.Click += (sender, e) => Close();
+
+            fileMenu.Items.Add(exitItem);
+
+            MenuItem helpMenu = new MenuItem
+            {
+                Header = "Справка"
+            };
+
+            MenuItem aboutItem = new MenuItem
+            {
+                Header = "О программе"
+            };
+
+            aboutItem.Click += (sender, e) =>
+            {
+                AboutWindow aboutWindow = new AboutWindow();
+                aboutWindow.ShowDialog();
+            };
+
+            helpMenu.Items.Add(aboutItem);
+
+            menu.Items.Add(fileMenu);
+            menu.Items.Add(helpMenu);
+
+            Grid.SetRow(menu, 0);
+            MainGrid.Children.Add(menu);
         }
 
         private void CreateDisplay()
@@ -45,7 +94,7 @@ namespace SimpleCalculatorMVVM
                 Margin = new Thickness(0, 0, 0, 15)
             };
 
-            Grid.SetRow(displayBorder, 0);
+            Grid.SetRow(displayBorder, 1);
 
             Grid displayGrid = new Grid();
 
@@ -75,12 +124,14 @@ namespace SimpleCalculatorMVVM
             TextBox displayText = new TextBox
             {
                 FontSize = 34,
+                FontFamily = new FontFamily(
+                    new Uri("pack://application:,,,/"),
+                    "./Resources/Fonts/#Montserrat"),
                 IsReadOnly = true,
                 BorderThickness = new Thickness(0),
                 Background = Brushes.Transparent,
                 TextAlignment = TextAlignment.Right,
-                VerticalContentAlignment = VerticalAlignment.Center,
-                Foreground = new SolidColorBrush(Color.FromRgb(33, 33, 33))
+                VerticalContentAlignment = VerticalAlignment.Center
             };
 
             displayText.SetBinding(
@@ -101,7 +152,7 @@ namespace SimpleCalculatorMVVM
         {
             Grid buttonGrid = new Grid();
 
-            Grid.SetRow(buttonGrid, 1);
+            Grid.SetRow(buttonGrid, 2);
 
             for (int i = 0; i < 7; i++)
             {
@@ -145,8 +196,11 @@ namespace SimpleCalculatorMVVM
                 Margin = new Thickness(5),
                 BorderThickness = new Thickness(0),
                 Foreground = new SolidColorBrush(Color.FromRgb(33, 33, 33)),
-                Background = GetButtonColor(text)
+                Background = GetButtonColor(text),
+                Cursor = System.Windows.Input.Cursors.Hand
             };
+
+
 
             button.SetBinding(
                 Button.CommandProperty,
@@ -159,6 +213,7 @@ namespace SimpleCalculatorMVVM
 
             grid.Children.Add(button);
         }
+
 
         private Brush GetButtonColor(string buttonText)
         {

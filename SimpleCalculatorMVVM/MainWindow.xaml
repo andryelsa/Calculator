@@ -6,7 +6,8 @@
         Width="420"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Background="#F2F4F8">
+        Background="#F2F4F8"
+        Icon="/Resources/Icons/calculator.ico">
 
     <Grid x:Name="MainGrid"/>
 
